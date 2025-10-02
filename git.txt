@@ -8,9 +8,51 @@ echo "# Proyecto-Aurelion" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/jlopez-desarrollador/Proyecto-Aurelion.git
-git push -u origin main
 
 #Verificar Archivos monitoreados
 git status
+
+#Agregar todos los archivos 
+git add .
+
+#Primer Commit
+git commit -m "first commit"
+
+#Comprobar commits 
+git log
+
+#Rama
+git branch -M main
+
+#Unir repositorio local con github
+git remote add origin https://github.com/jlopez-desarrollador/Proyecto-Aurelion.git
+
+#Subir
+git push -u origin main
+
+----------------------------------------
+
+#Flujo tipico
+
+#Hacer cambios
+#Comprobar nuevos cambios
+git status
+
+#Agregar todo
+git add .
+git status
+
+#Comentario
+git commit -m "ALGO"
+git log
+
+#Agregar commit a git hub
+git push
+
+
+---------------------------------------
+#Reset al ultimo commit
+git reset --hard
+
+
+
