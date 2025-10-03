@@ -1,3 +1,4 @@
+
 def mostrar_menu():
     print("\n=== Menú de secciones ===")
     print("1) Tema, problema y solución")
@@ -6,25 +7,19 @@ def mostrar_menu():
     print("4) Sugerencias y mejoras")
     print("0) Salir")
 
-def main():
-    opcion = None
-    while opcion != "0":
-        mostrar_menu()
-        opcion = input("Selecciona una opción: ")
+def mostrar_tema_problema_solucion():
+    print("\n👉 Tema, problema y solución:")
+    print("🎯 Tema: Optimización de la estrategia comercial mediante el análisis de ventas por ciudad. "
+          "El objetivo es identificar zonas con alto y bajo rendimiento para tomar decisiones "
+          "informadas que impulsen los ingresos.")
+    print("❗ Problema: Actualmente no contamos con una visión clara sobre qué ciudades generan más "
+          "ingresos y cuáles tienen bajo rendimiento comercial. Esta falta de información limita "
+          "la capacidad de rediseñar estrategias específicas para mejorar las ventas en zonas menos activas.")
+    print("✅ Solución: Utilizaremos Python y pandas para realizar un análisis de ventas por ciudad.")
 
-        if opcion == "1":
-            print("\n👉 Tema, problema y solución:")
-            print("🎯 Tema: Optimización de la estrategia comercial mediante el análisis de ventas por ciudad. "
-                  "El objetivo es identificar zonas con alto y bajo rendimiento para tomar decisiones "
-                  "informadas que impulsen los ingresos.")
-            print("❗ Problema: Actualmente no contamos con una visión clara sobre qué ciudades generan más "
-                  "ingresos y cuáles tienen bajo rendimiento comercial. Esta falta de información limita "
-                  "la capacidad de rediseñar estrategias específicas para mejorar las ventas en zonas menos activas.")
-            print("✅ Solución: Utilizaremos Python y pandas para realizar un análisis de ventas por ciudad.")
-
-        elif opcion == "2":
-            print("\n👉 Dataset de referencia:")
-            print("""
+def mostrar_dataset_referencia():
+    print("\n👉 Dataset de referencia:")
+    print("""
 ### Tabla: Ventas
 | Campo          | Tipo de dato | Escala    |
 |----------------|--------------|-----------|
@@ -67,11 +62,11 @@ def main():
 | email          | str          | Nominal   |
 | ciudad         | str          | Nominal   |
 | fecha_alta     | datetime.date| Intervalo |
-			""")
+            """)
 
-        elif opcion == "3":
-            print("\n👉 Información, pasos, pseudocódigo y diagrama:")
-            print("""
+def mostrar_info_pasos_pseudocodigo_diagrama():
+    print("\n👉 Información, pasos, pseudocódigo y diagrama:")
+    print("""
 ### 3.1 Información
 1. **Tema, problema y solución.**
 2. **Dataset de referencia.** Resumen de fuente y definición.
@@ -193,11 +188,11 @@ FIN
 
 ### 3.4 Diagrama de flujo
 EN CARPETA
-			""")
+            """)
 
-        elif opcion == "4":
-            print("\n👉 Sugerencias y mejoras:")
-            print("""
+def mostrar_sugerencias_mejoras():
+    print("\n👉 Sugerencias y mejoras:")
+    print("""
 1. Agregar comentarios: Explica la función de cada bloque para facilitar el mantenimiento.
 2. Validar entrada del usuario: Usa manejo de excepciones para evitar errores si el usuario ingresa algo inesperado.
 3. Separar lógica en funciones: Crea funciones para cada sección del menú, así el código será más modular y fácil de ampliar.
@@ -206,13 +201,32 @@ EN CARPETA
 6. Internacionalización: Si el programa se usará en otros idiomas, considera separar los textos en variables o archivos de recursos.
 7. Documentar el código: Agrega docstrings a las funciones principales.
 8. Agregar pruebas unitarias: Para asegurar que cada función se comporta correctamente.
-			""")
+            """)
 
+def salir():
+    print("\n👋 Saliendo del programa...")
+
+def opcion_no_valida():
+    print("\n⚠️ Opción no válida. Intenta nuevamente.")
+
+
+def main():
+    opcion = None
+    while opcion != "0":
+        mostrar_menu()
+        opcion = input("Selecciona una opción: ")
+        if opcion == "1":
+            mostrar_tema_problema_solucion()
+        elif opcion == "2":
+            mostrar_dataset_referencia()
+        elif opcion == "3":
+            mostrar_info_pasos_pseudocodigo_diagrama()
+        elif opcion == "4":
+            mostrar_sugerencias_mejoras()
         elif opcion == "0":
-            print("\n👋 Saliendo del programa...")
-
+            salir()
         else:
-            print("\n⚠️ Opción no válida. Intenta nuevamente.")
+            opcion_no_valida()
 
 if __name__ == "__main__":
     main()
