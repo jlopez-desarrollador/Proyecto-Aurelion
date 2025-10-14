@@ -124,5 +124,5 @@ FIN
 6. Internacionalización (soporte a varios idiomas).  
 7. Documentar el código con docstrings.  
 8. Agregar pruebas unitarias para asegurar el correcto funcionamiento. 
-# Sugerencias Aceptadas
+#### Sugerencias Aceptadas
 Aplica separar la logica en funciones 
